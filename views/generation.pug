@@ -1,0 +1,29 @@
+extends layout.pug
+block head
+        link(rel="stylesheet", href="styles/individual-render.css")
+block content
+        .main
+            .information
+                .info
+                    - let name = `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`
+                    p
+                        strong.info-title Name:&nbsp;
+                        =name
+                    p
+                        strong.info-title Main Region:&nbsp;
+                        =data.main_region.name
+                    p
+                .info
+                    .species
+                        strong.info-title Species:&nbsp;
+                        for species in data.pokemon_species
+                          p= species.name
+                    .moves
+                        strong.info-title Moves:&nbsp;
+                        for move in data.moves
+                          p= move.name
+                    p
+                .abilities
+                    strong.info-title Abilities:&nbsp;
+                    for ability in data.abilities
+                      p= ability.name

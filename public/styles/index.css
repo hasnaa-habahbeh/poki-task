@@ -1,0 +1,253 @@
+.categories {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.category:hover, .gram img:hover {
+    opacity: 80%;
+}
+
+.category p {
+    width: 100%;
+}
+
+.category-heading {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.heading {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.hero-image-box {
+    position: relative;
+    width: 70%;
+}
+
+.hero-image {
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.hero-image-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    left: 10%;
+    position: absolute;
+    top: 60%;
+}
+
+.hero-image-text .text, .hero-image-text .title {
+    background-color: rgb(250, 200, 36);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-image-text .title {
+    font-size: 32px;
+    padding: 10px;
+}
+
+.hero-text-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 30%;
+    width: 100%;
+}
+
+.box {
+    align-items: center;
+    background-color: rgb(250, 200, 36);
+    display: flex;
+    flex-direction: column;
+    height: 47%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.box .heading {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.featured {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.featured-image {
+    max-width: 150px;
+    width: 50%;
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.learn-more-button {
+    background-color: rgb(250, 200, 36);
+    border: none;
+    cursor: pointer;
+    padding: 10px 24px;
+    width: 140px;
+}
+
+.gram-bar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.gram-bar-h1 {
+    font-size: 20px;
+    padding: 0 10px;
+    text-align: center;
+    width: 20%;
+}
+
+.horizontal-line {
+    border: none;
+    height: 8px;
+    width: 43%;
+}
+
+.gram-bar .before {
+    background: linear-gradient(90deg, rgba(217,0,0,0.3) 17%, rgba(255,166,0,1) 87%, rgba(255,226,0,1) 100%);
+}
+
+.gram-bar .after {
+    background: linear-gradient(270deg, rgba(217,0,0,0.3) 17%, rgba(255,166,0,1) 87%, rgba(255,226,0,1) 100%);
+}
+
+.gram {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gram img {
+    margin: auto;
+    cursor: pointer;
+}
+
+.load_more {
+    background-color: rgb(250, 200, 36);
+    border: none;
+    cursor: pointer;
+    margin-left: calc(50% - 50px);
+    margin-top: 30px;
+    padding: 8px 20px;
+}
+
+button:hover {
+    background-color: rgb(255, 214, 79);
+}
+
+@media only screen and (max-width: 1050px) {
+    .categories {
+        flex-wrap: wrap;
+    }
+
+    .category {
+        width: 40%;
+        word-wrap: break-word;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .category {
+        width: 36%;
+    }
+
+    .gram-bar-h1 {
+        font-size: 16px;
+    }
+
+    .gram {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .category {
+        width: 100%;
+    }
+
+    .featured {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .gram {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-image-box {
+        width: 100%;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-text-boxes {
+        flex-direction: row;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .box .heading {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .featured-content {
+        width: 100%;
+    }
+}

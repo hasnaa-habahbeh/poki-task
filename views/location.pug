@@ -1,0 +1,18 @@
+extends layout.pug
+block head
+        link(rel="stylesheet", href="styles/individual-render.css")
+block content
+        .main
+            .information
+                - let name = `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`
+                .info
+                p
+                    strong.info-title Name:&nbsp;
+                    =name
+                p
+                    strong.info-title Region:&nbsp;
+                    =data.region.name
+                .areas
+                    strong.info-title Areas:&nbsp;
+                    for area, i in data.areas
+                      p= area.name

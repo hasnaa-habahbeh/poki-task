@@ -1,0 +1,26 @@
+extends layout.pug
+block head
+        link(rel="stylesheet", href="styles/individual-render.css")
+block content
+        .main
+            img.sprites-image(src=`${data.sprites.default}`)
+            .information
+                - let name = `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`
+                .info
+                    p
+                        strong.info-title Name:&nbsp;
+                        =name
+                    p
+                        strong.info-title Effect:&nbsp;
+                        =data.effect_entries.effect
+                .info
+                    p
+                        strong.info-title Short Effect:&nbsp;
+                        =data.effect_entries.short_effect
+                    p
+                        strong.info-title Cost:&nbsp;
+                        =data.cost
+                .attributes
+                    strong.info-title Attributes:&nbsp;
+                    for attribute, i in data.attributes
+                      p= attribute.name

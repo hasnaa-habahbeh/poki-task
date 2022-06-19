@@ -1,0 +1,51 @@
+extends layout.pug
+block head
+        title Pokémon API
+        link(rel="stylesheet", href="styles/reset.css")
+        link(rel="stylesheet", href="styles/index.css")
+block content
+        include nav.pug
+        .hero
+            .hero-image-box
+                img.hero-image(src="https://www.itl.cat/pngfile/big/151-1511768_1920x1080-legendary-pokemon-pokemon-solgaleo-and-lunala.jpg")
+                .hero-image-text
+                    h1.title Pokémon
+                    p.text some text
+            .hero-text-boxes
+                .box
+                    strong.heading Text
+                    p some text
+                .box
+                    strong.heading Text
+                    p some text
+        .categories
+            .category(onclick="window.location='/pokemon'")
+                img(src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
+                strong.category-heading.heading Pokémon
+                p Creatures that inhabit the world of the Pokémon games.
+            .category(onclick="window.location='/games'")
+                img(src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")
+                strong.category-heading.heading Games
+                p A list of Pokémon games.
+            .category(onclick="window.location='/items'")
+                img(src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png")
+                strong.category-heading.heading Items
+                p Objects in the games which the player can pick up, keep in their bag, and use in some manner.
+            .category(onclick="window.location='/locations'")
+                img(src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png")
+                strong.category-heading.heading Locations
+                p Locations that can be visited within the games.
+        .featured
+            img.featured-image(src="https://static.wikia.nocookie.net/pokemongo/images/2/24/Berries.png")
+            .featured-content
+                strong.content-heading.heading Berries
+                p Berries are small fruits that can provide HP and status condition restoration, stat enhancement, and even damage negation when eaten by Pokémon.
+                button.learn-more-button(onclick="window.location='berries'") Learn More &#8594;
+        .gram-bar
+            hr.horizontal-line.before
+            h1.gram-bar-h1 Instant Grams
+            hr.horizontal-line.after
+        .gram#gram
+        button.load_more#load_more(onclick="getImages()") Load More
+
+        script(src='scripts/home-page.js')

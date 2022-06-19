@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+    background-size: cover;
+    background: linear-gradient(50deg, #ff0052 0%, #ff00a3 35%, #8d00ff 100%) no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+body {
+    line-height: 20px;
+    margin: 40px auto;
+    width: 60vw;
+}
+
+.navbar, .dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.nav-item, .dropdown-item {
+    background-color: rgb(250, 200, 36);
+    cursor: pointer;
+    display: block;
+    padding: 14px 3%;
+}
+
+.nav-item:hover, .dropdown-item:hover {
+    background-color: rgb(255, 214, 79);
+}
+
+.nav-item-link, .dropdown-item-link, .menu {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.dropdown, .menu {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 22px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .nav-item {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        flex-direction: column;
+        max-width: 260px;
+        width: 100%;
+        position: absolute;
+        top: 94px;
+        z-index: 20;
+    }
+
+    .dropdown-item {
+        display: none;
+        padding: 14px 14%;
+        background-color: rgba(250, 200, 36, 0.98);
+        border-bottom: solid rgb(255, 214, 79) 1px;
+    }
+
+    .menu {
+        display: block;
+    }
+}

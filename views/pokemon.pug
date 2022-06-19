@@ -1,0 +1,26 @@
+extends layout.pug
+block head
+        link(rel="stylesheet", href="styles/individual-render.css")
+block content
+        .main
+            img.sprites-image(src=`${data.sprites.front_default}`)
+            .information
+                - let name = `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`
+                .info
+                    p
+                        strong.info-title Name:&nbsp;
+                        =name
+                    p
+                        strong.info-title Base Experience:&nbsp;
+                        =data.base_experience
+                .info
+                    p
+                        strong.info-title Weight:&nbsp;
+                        =data.weight
+                    p
+                        strong.info-title Height:&nbsp;
+                        =data.height
+                p
+                    strong.info-title Abilities:&nbsp;
+                    for ability, i in data.abilities
+                      p= ability.ability.name

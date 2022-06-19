@@ -1,0 +1,30 @@
+extends layout.pug
+block head
+        link(rel="stylesheet", href="styles/individual-render.css")
+block content
+        .main
+            .information
+                .info
+                    - let name = `${data.name.charAt(0).toUpperCase()}${data.name.slice(1)}`
+                    p
+                        strong.info-title Name:&nbsp;
+                        =name
+                    p
+                        strong.info-title Firmness:&nbsp;
+                        =data.firmness.name
+                .info
+                    p
+                        strong.info-title Size:&nbsp;
+                        =data.size
+                    p
+                        strong.info-title Smoothness:&nbsp;
+                        =data.smoothness
+                .info
+                    p
+                        strong.info-title Growth Time:&nbsp;
+                        =data.growth_time
+                    p
+                    .flavors
+                        strong.info-title Flavors:&nbsp;
+                        for flavor in data.flavors
+                          p= flavor.flavor.name

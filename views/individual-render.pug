@@ -1,0 +1,15 @@
+extends layout.pug
+block head
+    title= data.name
+block content
+        include nav.pug
+        if(category == "pokemon")
+            include pokemon.pug
+        if(category == "generation")
+            include generation.pug
+        if(category == "berry")
+            include berry.pug
+        if(category == "item")
+            include item.pug
+        if(category == "location")
+            include location.pug

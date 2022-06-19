@@ -1,0 +1,17 @@
+extends layout.pug
+block head
+        title= title
+        link(rel="stylesheet", href="styles/reset.css")
+        link(rel="stylesheet", href="styles/rendering.css")
+block content
+        include nav.pug
+        h1.page-title= title
+        .items
+            for item, id in data
+              - let url = `/open-page?category=${category}&id=${id+1}`
+              .item(onclick=`window.location='${url}'`)
+                if category === 'pokemon'
+                    img(src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id+1}.png`)
+                if category === 'item'
+                    img(src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${item.name}.png`)
+                strong.text= item.name
